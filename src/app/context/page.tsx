@@ -10,11 +10,11 @@ const page = () => {
      
       <div className="w-full h-[80px] staticdiv1 relative border border-black  ">
        <div className=" staticdiv h-[80px] w-full  flex items-center justify-center">
-          <p className="  text-7xl font-bold m-auto text-black uppercase ">Home</p>
+          <p className="  text-5xl ordinal font-semibold m-auto text-black uppercase ">Home</p>
           </div>
           <div className=" whitespace-nowrap opabox   bg-orange-600 h-[80px] w-auto flex ">
           <div className="whitespace-nowrap movingdiv   h-[80px] w-full flex items-center justify-center">
-              <p className="text-6xl font-bold text-white uppercase ">Welcome To My Space</p>
+              <p className="text-5xl font-semibold  text-white uppercase ">Welcome To My Space</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -22,7 +22,7 @@ const page = () => {
               width={60}
               alt="hello dear"
               />
-                <p className="text-6xl font-bold text-white uppercase ">Welcome To My Space</p>
+                <p className="text-5xl font-semibold  text-white uppercase ">Welcome To My Space</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -32,7 +32,7 @@ const page = () => {
               />
           </div>
           <div className="whitespace-nowrap movingdiv  h-[80px] w-full flex items-center justify-center">
-              <p className="text-6xl font-bold text-white uppercase ">Welcome To My Space</p>
+              <p className="text-5xl font-semibold  text-white uppercase ">Welcome To My Space</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -40,7 +40,7 @@ const page = () => {
               width={60}
               alt="hello dear"
               />
-                <p className="text-6xl font-bold text-white uppercase ">Welcome To My Space</p>
+                <p className="text-5xl font-semibold  text-white uppercase ">Welcome To My Space</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -55,11 +55,11 @@ const page = () => {
  <Link className="w-full h-[80px]" href='/about'>
          <div className="w-full h-[80px] staticdiv1 relative border border-black  ">
        <div className=" staticdiv h-[80px] w-full  flex items-center justify-center">
-          <p className="  text-7xl font-bold m-auto text-black uppercase ">About</p>
+          <p className="  text-5xl ordinal font-semibold m-auto text-black uppercase ">About</p>
           </div>
           <div className=" whitespace-nowrap opabox   bg-fuchsia-600 h-[80px] w-auto flex ">
           <div className="whitespace-nowrap movingdiv   h-[80px] w-full flex items-center justify-center">
-              <p className="text-6xl font-bold text-white uppercase ">Get To Know Me</p>
+              <p className="text-5xl font-semibold  text-white uppercase ">Get To Know Me</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -67,7 +67,7 @@ const page = () => {
               width={60}
               alt="hello dear"
               />
-                <p className="text-6xl font-bold text-white uppercase ">Get To Know Me</p>
+                <p className="text-5xl font-semibold  text-white uppercase ">Get To Know Me</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -77,7 +77,7 @@ const page = () => {
               />
           </div>
           <div className="whitespace-nowrap movingdiv  h-[80px] w-full flex items-center justify-center">
-              <p className="text-6xl font-bold text-white uppercase ">Get To Know Me</p>
+              <p className="text-5xl font-semibold  text-white uppercase ">Get To Know Me</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -85,7 +85,7 @@ const page = () => {
               width={60}
               alt="hello dear"
               />
-                <p className="text-6xl font-bold text-white uppercase ">Get To Know Me</p>
+                <p className="text-5xl font-semibold  text-white uppercase ">Get To Know Me</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -100,11 +100,11 @@ const page = () => {
       <Link className="w-full h-[80px]" href='/projects'>
     <div className="w-full h-[80px] staticdiv1 relative border border-black  ">
        <div className=" staticdiv h-[80px] w-full  flex items-center justify-center">
-          <p className="  text-7xl font-bold m-auto text-black uppercase ">Projects</p>
+          <p className="  text-5xl ordinal font-semibold m-auto text-black uppercase ">Projects</p>
           </div>
-          <div className=" whitespace-nowrap opabox   bg-indigo-500 h-[80px] w-auto flex ">
+          <div className=" whitespace-nowrap opabox   bg-indigo-600 h-[80px] w-auto flex ">
           <div className="whitespace-nowrap movingdiv   h-[80px] w-full flex items-center justify-center">
-              <p className="text-6xl font-bold text-white uppercase ">Showcasing Project</p>
+              <p className="text-5xl font-semibold  text-white uppercase ">Showcasing Project</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -112,7 +112,7 @@ const page = () => {
               width={60}
               alt="hello dear"
               />
-                <p className="text-6xl font-bold text-white uppercase ">Showcasing Project</p>
+                <p className="text-5xl font-semibold  text-white uppercase ">Showcasing Project</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -122,7 +122,7 @@ const page = () => {
               />
           </div>
           <div className="whitespace-nowrap movingdiv  h-[80px] w-full flex items-center justify-center">
-              <p className="text-6xl font-bold text-white uppercase ">Showcasing Project</p>
+              <p className="text-5xl font-semibold  text-white uppercase ">Showcasing Project</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -130,7 +130,7 @@ const page = () => {
               width={60}
               alt="hello dear"
               />
-                <p className="text-6xl font-bold text-white uppercase ">Showcasing Project</p>
+                <p className="text-5xl font-semibold  text-white uppercase ">Showcasing Project</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -145,11 +145,11 @@ const page = () => {
       <Link className="w-full h-[80px]" href='/blogs'>
     <div className="w-full h-[80px] staticdiv1 relative border border-black  ">
        <div className=" staticdiv h-[80px] w-full  flex items-center justify-center">
-          <p className="  text-7xl font-bold m-auto text-black uppercase ">Blogs</p>
+          <p className="  text-5xl ordinal font-semibold m-auto text-black uppercase ">Blogs</p>
           </div>
           <div className=" whitespace-nowrap opabox   bg-red-600 h-[80px] w-auto flex ">
           <div className="whitespace-nowrap movingdiv   h-[80px] w-full flex items-center justify-center">
-              <p className="text-6xl font-bold text-white uppercase ">Thoughts & insights</p>
+              <p className="text-5xl font-semibold  text-white uppercase ">Thoughts & insights</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -157,7 +157,7 @@ const page = () => {
               width={60}
               alt="hello dear"
               />
-                <p className="text-6xl font-bold text-white uppercase ">Thoughts & insights</p>
+                <p className="text-5xl font-semibold  text-white uppercase ">Thoughts & insights</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -167,7 +167,7 @@ const page = () => {
               />
           </div>
           <div className="whitespace-nowrap movingdiv  h-[80px] w-full flex items-center justify-center">
-              <p className="text-6xl font-bold text-white uppercase ">Thoughts & insights</p>
+              <p className="text-5xl font-semibold  text-white uppercase ">Thoughts & insights</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -175,7 +175,7 @@ const page = () => {
               width={60}
               alt="hello dear"
               />
-                <p className="text-6xl font-bold text-white uppercase ">Thoughts & insights</p>
+                <p className="text-5xl font-semibold  text-white uppercase ">Thoughts & insights</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -190,11 +190,11 @@ const page = () => {
 <Link className="w-full h-[80px]" href='/contact'>
         <div className="w-full h-[80px] staticdiv1 relative border border-black  ">
        <div className=" staticdiv h-[80px] w-full  flex items-center justify-center">
-          <p className="  text-7xl font-bold m-auto text-black uppercase ">Contact</p>
+          <p className="  text-5xl ordinal font-semibold m-auto text-black uppercase ">Contact</p>
           </div>
           <div className=" whitespace-nowrap opabox   bg-yellow-500 h-[80px] w-auto flex ">
           <div className="whitespace-nowrap movingdiv   h-[80px] w-full flex items-center justify-center">
-              <p className="text-6xl font-bold text-white uppercase ">Get in Touch</p>
+              <p className="text-5xl font-semibold  text-white uppercase ">Get in Touch</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -202,7 +202,7 @@ const page = () => {
               width={60}
               alt="hello dear"
               />
-                <p className="text-6xl font-bold text-white uppercase ">Get in Touch</p>
+                <p className="text-5xl font-semibold  text-white uppercase ">Get in Touch</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -212,7 +212,7 @@ const page = () => {
               />
           </div>
           <div className="whitespace-nowrap movingdiv  h-[80px] w-full flex items-center justify-center">
-              <p className="text-6xl font-bold text-white uppercase ">Get in Touch</p>
+              <p className="text-5xl font-semibold  text-white uppercase ">Get in Touch</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
@@ -220,7 +220,7 @@ const page = () => {
               width={60}
               alt="hello dear"
               />
-                <p className="text-6xl font-bold text-white uppercase ">Get in Touch</p>
+                <p className="text-5xl font-semibold  text-white uppercase ">Get in Touch</p>
               <Image
               src="/bg1.jpg"
               className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"

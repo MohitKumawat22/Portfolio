@@ -4,13 +4,7 @@ import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/Navbar";
 import "sheryjs/dist/Shery.css";
-import { Sekuya } from "next/font/google";
-
-const sekuya = Sekuya({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
-});
+ 
 // Poppins is not a variable font, so we must specify the weights we need
 const poppins = Poppins({
   subsets: ["latin"],

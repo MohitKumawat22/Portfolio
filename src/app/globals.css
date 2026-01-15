@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@tailwind base;
 
 @plugin "tailwindcss-animate";
 @import "tw-animate-css";
