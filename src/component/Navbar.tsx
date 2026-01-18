@@ -4,7 +4,13 @@ import Link from "next/link"
 import { FaLinkedin } from "react-icons/fa6";
 import { usePathname } from 'next/navigation';
 import { MenuIcon } from "./Crossicon";
+// import { ThemeToggle } from "..components/ThemeToggle";
+import dynamic from "next/dynamic"
 
+// Import the component with SSR disabled
+const ThemeToggle = dynamic(() => import("./ThemeToggle").then(mod => mod.ThemeToggle), {
+  ssr: false,
+})
 const Navbar = () => {
 const pathname = usePathname();
   const targetLink = pathname === '/' ? '/context' : '/';
@@ -21,7 +27,7 @@ const pathname = usePathname();
    <Link href="https://www.linkedin.com/in/mohit-ostwal-kumawat123/" target="_blank" className="h-[40px] invert p-2 m-2 mt-0 mb-0 font-bold"> <FaLinkedin className="text-3xl text-white" /> </Link>
    <Link href="https://wa.me/7415354618?text=Hello  " target="_blank" className="h-[40px]  p-2 m-2 mt-0 invert mb-0 font-bold"> <FaWhatsapp className="text-3xl text-white" /> </Link>
    <Link href="https://www.instagram.com/dev.mohitkumawat/ " target="_blank" className="h-[40px]  p-2 m-2 invert mt-0 mb-0 font-bold"> <FaInstagram className="text-3xl text-white" /> </Link>
-   
+   {/* <ThemeToggle /> */}
       </div>
    <Link href={targetLink}  >  
    

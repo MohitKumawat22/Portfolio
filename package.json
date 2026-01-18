@@ -4,11 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-<<<<<<< HEAD
     "build": "next build --webpack ",
-=======
-    "build": "next build --webpack",
->>>>>>> 37cbc812000b76c9a5c1eebdfe348c534cb0968a
     "start": "next start",
     "lint": "eslint"
   },
