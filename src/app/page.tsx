@@ -6,6 +6,7 @@ import SheryEffects from "../component/SheryEffects";
 import Eyes from "../component/eyesss";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "@/component/Footer";
 
 const page = () => {
   return (
@@ -57,7 +58,7 @@ const page = () => {
         </div>
 
         <Image
-          className="rounded-lg z-4 sticky top-0 left-1/2  transform -translate-x-1/2 transform translate-y-0 h-[90vh] w-auto top-2 object-content"
+          className="rounded-lg z-4 sticky top-20 left-1/2  transform -translate-x-1/2 transform translate-y-0 h-[90vh] w-auto top-2 object-content"
           src="/self5.png"
           alt="my profile"
           width={400}
@@ -70,6 +71,7 @@ const page = () => {
       " >
 
       </div>
+      <Footer/>
     </>
   );
 };
