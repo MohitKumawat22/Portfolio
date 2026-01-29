@@ -1,4 +1,4 @@
-import { ThemeProvider } from "../component/Theme-provider";
+import { ThemeProvider } from "../component/theme-provider";
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";

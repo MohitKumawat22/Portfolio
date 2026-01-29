@@ -4,13 +4,8 @@ import Link from "next/link"
 import { FaLinkedin } from "react-icons/fa6";
 import { usePathname } from 'next/navigation';
 import { MenuIcon } from "./Crossicon";
-// import { ThemeToggle } from "..components/ThemeToggle";
-import dynamic from "next/dynamic"
 
-// Import the component with SSR disabled
-const ThemeToggle = dynamic(() => import("./ThemeToggle").then(mod => mod.ThemeToggle), {
-  ssr: false,
-})
+
 const Navbar = () => {
 const pathname = usePathname();
   const targetLink = pathname === '/' ? '/context' : '/';
@@ -19,14 +14,14 @@ const pathname = usePathname();
     <nav className=" p-3 pb-3 pt-2 pb-0 w-full flex justify-between bg-white fixed top-0 z-45 items-center">
       <div className="w-50 flex flex-col justify-center items-center ">
         <Link href='/' target="_self" >
-<h3 className="text-2xl text-black font-poppins uppercase font-bold">Portfolio</h3>
+<h3 className="text-xl  md:text-2xl lg:text-2xl text-black font-poppins uppercase font-bold">Portfolio</h3>
 </Link>
       </div>
       <div className="flex  ">
-<Link href="https://github.com/MohitKumawat22 " target="_blank" className="h-[40px] invert p-2 m-2 mt-0 mb-0 font-bold"> <FaGithub className="text-3xl text-white" /> </Link>
-   <Link href="https://www.linkedin.com/in/mohit-ostwal-kumawat123/" target="_blank" className="h-[40px] invert p-2 m-2 mt-0 mb-0 font-bold"> <FaLinkedin className="text-3xl text-white" /> </Link>
-   <Link href="https://wa.me/7415354618?text=Hello  " target="_blank" className="h-[40px]  p-2 m-2 mt-0 invert mb-0 font-bold"> <FaWhatsapp className="text-3xl text-white" /> </Link>
-   <Link href="https://www.instagram.com/dev.mohitkumawat/ " target="_blank" className="h-[40px]  p-2 m-2 invert mt-0 mb-0 font-bold"> <FaInstagram className="text-3xl text-white" /> </Link>
+<Link href="https://github.com/MohitKumawat22 " target="_blank" className="h-[40px] invert p-1 m-1 mt-0 mb-0 font-bold"> <FaGithub className="text-3xl text-white" /> </Link>
+   <Link href="https://www.linkedin.com/in/mohit-ostwal-kumawat123/" target="_blank" className="h-[40px] invert p-1 m-1 mt-0 mb-0 font-bold"> <FaLinkedin className="text-3xl text-white" /> </Link>
+   <Link href="https://wa.me/7415354618?text=Hello  " target="_blank" className="h-[40px]  p-1 m-1 mt-0 invert mb-0 font-bold"> <FaWhatsapp className="text-3xl text-white" /> </Link>
+   <Link href="https://www.instagram.com/dev.mohitkumawat/ " target="_blank" className="h-[40px]  p-1 m-1 invert mt-0 mb-0 font-bold"> <FaInstagram className="text-3xl text-white" /> </Link>
    {/* <ThemeToggle /> */}
       </div>
    <Link href={targetLink}  >  
