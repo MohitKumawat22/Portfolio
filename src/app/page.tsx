@@ -1,4 +1,5 @@
 import Lines from "../component/Lines";
+// import LetterGlitch from '../components/LetterGlitch';
 // import ScrambledText from "../components/ScrambledText";
 // import { PlusIcon } from "../components/ui/plus";
 // import React from "react";
@@ -61,6 +62,12 @@ const page = () => {
     edgeFade={0.25}
     transparent
   />
+  {/* <LetterGlitch
+  glitchSpeed={50}
+  centerVignette={true}
+  outerVignette={false}
+  smooth={true}
+/> */}
 </div>
    </main>
      
