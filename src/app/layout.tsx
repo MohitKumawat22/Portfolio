@@ -1,4 +1,4 @@
-import { ThemeProvider } from "../component/theme-provider";
+
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
@@ -33,16 +33,11 @@ export default function RootLayout({
       <body
         className={`${poppins.variable}  ${montserrat.variable} antialiased`}
       >
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          ></ThemeProvider>
+      
 
         <Navbar  />
         {children}
-        <ThemeProvider/>
+      
       </body>
     </html>
   );

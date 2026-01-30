@@ -42,11 +42,11 @@ const page = () => {
         </div>
 
 
-<div  className="z-1 h-full absolute left-0 w-full">
+<div  className="z-10 h-full absolute left-0 w-full">
   <PixelBlast
     variant="square"
     pixelSize={4}
-    color="#e5b710b6"
+    color="#f4c313ee"
     patternScale={2}
     patternDensity={1}
     pixelSizeJitter={0}
