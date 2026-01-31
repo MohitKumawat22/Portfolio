@@ -8,7 +8,7 @@ import HoverGrid from "../component/HoverGrid";
 import PixelBlast from '../component/PixelBlast';
 import Image from "next/image";
 import Link from "next/link";
-// import Footer from "@/component/Footer";
+import Footer from "@/component/Footer";
 import "./globals.css";
 
 import Eyes from "@/component/eyesss";
@@ -26,7 +26,7 @@ const page = () => {
         <div className="w-full h-[27vh]  flex  justify-center  relative items-center overflow-hidden">
         <Lines/>  
       </div>
-          <div className="h-20 w-60 z-30 flex flex-col absolute bottom-10 right-10">
+          {/* <div className="h-20 w-60 z-30 flex flex-col absolute bottom-10 right-10">
           <h3 className="capitalize opacity-60 z-30 text-black hover:opacity-100 align-right transition-opacity duration-100">
             Helping startups and brands turn ideas into reality. Currently
             available for new projects.
@@ -39,9 +39,9 @@ const page = () => {
             </div>
           </Link>
           <div className="aminebuttons z-30 bg-whi h-11 w-50 rounded-full select-none m-3 p-2 flex items-center justify-center uppercase">
-            Hire{" "}
+            Hire
           </div>
-        </div>
+        </div> */}
            <HoverGrid />
 
   </main>
@@ -105,32 +105,37 @@ const page = () => {
     {/* </div> */}
    
   
-      <div className="h-[200vh] w-screen relative flex flex-row ">
-        <div className="h-[100vh] w-full  absolute flex justify-center items-center ">
-          <h1 className="text-[200px] whitespace-nowrap top-1/2 left-1/2  transform -translate-x-1/2 transform -translate-y-1/2 text-center  uppercase z-2  text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 font-bold opacity-50   absolute">
+      <div className="h-[200vh]  w-full relative flex flex-col">
+        <div className="min-h-screen  w-full   absolute flex justify-center items-center ">
+          <h1 className="text-[70px] sm:text-[100px] md:text-[150px] lg:text-[200px] whitespace-nowrap  uppercase z-2  text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 font-bold opacity-80  pointer-events-none absolute">
             About Me
           </h1>
-          <span className="absolute top-20 left-30">Aspiring to understand <br />
-            what i coded yesterday </span>
+         <span className="text-xs sm:text-sm lg:text-2xl absolute top-[25.6%] left-[8.6%]">
+  <span className="text-2xl  lg:text-3xl font-semibold">A</span>spiring to understand <br />
+  what i coded yesterday
+</span>
+
+            <span className="absolute text-xs sm:text-sm lg:text-2xl top-140 left-100"><span className="text-2xl lg:text-3xl font-semibold">B</span>uilding <br /> Cool stuff</span>
+            <span className="absolute text-xs sm:text-sm lg:text-2xl top-30 left-130"><span className="text-2xl  lg:text-3xl font-semibold">O</span>bsessed with <br /> Modern and 3D Web</span>
+            <span className="absolute text-xs sm:text-sm lg:text-2xl top-120 left-150"><span className="text-2xl  lg:text-3xl font-semibold">U</span>I/UX Designer</span>
 
 
         </div>
-
+        <div className="h-[100vh] w-screen sticky z-40   top-0 flex items-center justify-center">
         <Image
-          className="rounded-lg z-4 sticky top-20 left-1/2  transform -translate-x-1/2 transform translate-y-0 h-[90vh] w-auto top-2 object-content"
+          className="rounded-lg z-40  top-20  object-cover h[70vh] lg:h-[90vh] w-auto "
           src="/self5.png"
           alt="my profile"
           width={400}
           height={400}
         />
+        </div>
 
-        <div className="h-[100vh] w-1/3 flex justify-center items-center "></div>
+        
+     
+        <div className="h-screen  w-full  " > </div>
       </div>
-      <div className="h-dvh w-dvw 
-      " >
-
-      </div>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 };

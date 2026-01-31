@@ -14,7 +14,7 @@ const pathname = usePathname();
     <nav className=" p-1  w-full flex justify-between bg-white fixed top-0 z-45 items-center">
       <div className="w-50 flex flex-col justify-center items-center ">
         <Link href='/' target="_self" >
-<h3 className="text-xl  md:text-2xl lg:text-2xl text-black font-poppins uppercase font-bold">Portfolio</h3>
+<h3 className="text-sm  md:text-2xl lg:text-2xl text-black font-poppins uppercase font-bold">Portfolio</h3>
 </Link>
       </div>
       <div className="flex  ">
