@@ -1,10 +1,10 @@
 const Lines = () => {
   return (
     <>
-       <div className='h-10  w-[101vw] bg-red-400  top-[43%] origin-center rotate-5 flex flex-row absolute z-5 opacity-60  '>
+       <div className='h-10  w-[101vw] bg-red-400  top-[43%] origin-center rotate-5 flex flex-row absolute z-5 opacity-80  '>
   
     </div>
-     <div className='h-10 w-[101vw] bg-blue-400  top-[43%] origin-center -rotate-5 flex flex-row absolute  z-5 opacity-60  '>
+     <div className='h-10 w-[101vw] bg-blue-400  top-[43%] origin-center -rotate-5 flex flex-row absolute  z-5 opacity-80  '>
   
     </div>
     <div className="h-12 whitespace-nowrap  text-black bg-amber-300 flex z-50 ">

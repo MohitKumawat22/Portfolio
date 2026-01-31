@@ -11,7 +11,7 @@ const pathname = usePathname();
   const targetLink = pathname === '/' ? '/context' : '/';
   return (
     <>
-    <nav className=" p-3 pb-3 pt-2 pb-0 w-full flex justify-between bg-white fixed top-0 z-45 items-center">
+    <nav className=" p-1  w-full flex justify-between bg-white fixed top-0 z-45 items-center">
       <div className="w-50 flex flex-col justify-center items-center ">
         <Link href='/' target="_self" >
 <h3 className="text-xl  md:text-2xl lg:text-2xl text-black font-poppins uppercase font-bold">Portfolio</h3>
