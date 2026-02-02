@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/component/Footer";
 import "./globals.css";
-
+import Projectlap from "../component/Projectlap";
 import Eyes from "@/component/eyesss";
 
 const page = () => {
@@ -107,17 +107,17 @@ const page = () => {
   
       <div className="h-[200vh]  w-full relative flex flex-col">
         <div className="min-h-screen  w-full   absolute flex justify-center items-center ">
-          <h1 className="text-[70px] sm:text-[100px] md:text-[150px] lg:text-[200px] whitespace-nowrap  uppercase z-2  text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 font-bold opacity-80  pointer-events-none absolute">
+          <h1 className="text-[70px] sm:text-[100px] md:text-[150px] lg:text-[200px] whitespace-nowrap  uppercase z-2  text-transparent bg-clip-text bg-gradient-to-r from-[#833AB4] to-[#405DE6] font-bold opacity-70  pointer-events-none absolute">
             About Me
           </h1>
          <span className="text-xs sm:text-sm lg:text-2xl absolute top-[25.6%] left-[8.6%]">
   <span className="text-2xl  lg:text-3xl font-semibold">A</span>spiring to understand <br />
-  what i coded yesterday
-</span>
 
+</span>
             <span className="absolute text-xs sm:text-sm lg:text-2xl top-140 left-100"><span className="text-2xl lg:text-3xl font-semibold">B</span>uilding <br /> Cool stuff</span>
             <span className="absolute text-xs sm:text-sm lg:text-2xl top-30 left-130"><span className="text-2xl  lg:text-3xl font-semibold">O</span>bsessed with <br /> Modern and 3D Web</span>
             <span className="absolute text-xs sm:text-sm lg:text-2xl top-120 left-150"><span className="text-2xl  lg:text-3xl font-semibold">U</span>I/UX Designer</span>
+            <span className="absolute text-xs sm:text-sm lg:text-2xl top-120 left-150"><span className="text-2xl  lg:text-3xl font-semibold">T</span>ech enthusiast</span>
 
 
         </div>
@@ -135,6 +135,7 @@ const page = () => {
      
         <div className="h-screen  w-full  " > </div>
       </div>
+      <Projectlap/>
       <Footer/>
     </>
   );
