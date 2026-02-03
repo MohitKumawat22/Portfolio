@@ -1,17 +1,16 @@
 import Lines from "../component/Lines";
-import LetterGlitch from '../components/LetterGlitch';
+
 // import ScrambledText from "../components/ScrambledText";
 // import { PlusIcon } from "../components/ui/plus";
 // import React from "react";
 // import SheryEffects from "../component/SheryEffects";
 import HoverGrid from "../component/HoverGrid";
-import PixelBlast from '../component/PixelBlast';
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/component/Footer";
 import "./globals.css";
-import Projectlap from "../component/Projectlap";
 import Eyes from "@/component/eyesss";
+import Laptop from "../component/Laptop";
 
 const page = () => {
   return (
@@ -135,10 +134,12 @@ const page = () => {
      
         <div className="h-screen  w-full  " > </div>
       </div>
-      <Projectlap/>
-      <Footer/>
+      
+          <Laptop/>
+        
+        {/* <Footer/> */}
+ 
     </>
   );
-};
-
+}
 export default page;
