@@ -61,8 +61,8 @@ const Navbar = () => {
             menuButtonColor="#000000" 
             openMenuButtonColor="#000000"
             changeMenuColorOnOpen={true}
-            colors={['#dad7e1', '#5227FF']}
-            accentColor="#5227FF"
+            colors={['#63b3ed', '#f87171']}
+            accentColor="#FCD34D"
             isFixed={true}
             onMenuOpen={() => console.log('Menu opened')}
             onMenuClose={() => console.log('Menu closed')}

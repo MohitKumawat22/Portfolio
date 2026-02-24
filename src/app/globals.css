@@ -207,3 +207,22 @@
   position: relative;
   overflow: hidden;
 }
+@keyframes pingPong {
+  0% { transform: translateX(-30px); }
+  100% { transform: translateX(30px); }
+}
+
+.animate-ping-pong {
+  animation: pingPong 2s infinite alternate ease-in-out;
+}
+
+/* Optional: Add delays so they don't all move at the exact same time */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.3s; }
+.delay-300 { animation-delay: 0.5s; }
+.delay-400 { animation-delay: 0.7s; }
+.delay-500 { animation-delay: 0.9s; }
+.delay-600 { animation-delay: 1.1s; }
+.delay-700 { animation-delay: 1.3s; }
+
+

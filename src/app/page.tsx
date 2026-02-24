@@ -110,31 +110,44 @@ const page = () => {
             About Me
           </h1>
         {/* A: Aspiring... (Existing) */}
-  <span className="text-xs sm:text-sm lg:text-2xl absolute top-[25.6%] left-[8.6%]">
+ <div className="relative w-full h-screen">
+  {/* A: Aspiring... */}
+  <span className="animate-ping-pong delay-100 text-xs sm:text-sm lg:text-2xl absolute top-[25.6%] left-[8.6%]">
     <span className="text-2xl lg:text-3xl font-semibold">A</span>spiring to understand <br />
   </span>
 
-  {/* B: Building... (Was top-140, left-100) -> Low Center-Left */}
-  <span className="absolute text-xs sm:text-sm lg:text-2xl top-[65%] left-[45%]">
+  {/* B: Building... */}
+  <span className="animate-ping-pong delay-200 absolute text-xs sm:text-sm lg:text-2xl top-[65%] left-[45%]">
     <span className="text-2xl lg:text-3xl font-semibold">B</span>uilding <br /> Cool stuff
   </span>
 
-  {/* O: Obsessed... (Was top-30, left-120) -> High Center */}
-  <span className="absolute text-xs sm:text-sm lg:text-2xl top-[15%] left-[55%]">
+  {/* O: Obsessed... */}
+  <span className="animate-ping-pong delay-300 absolute text-xs sm:text-sm lg:text-2xl top-[15%] left-[55%]">
     <span className="text-2xl lg:text-3xl font-semibold">O</span>bsessed with <br /> Modern and 3D Web
   </span>
 
-  {/* U: UI/UX... (Was top-120, left-150) -> Mid-Low Right */}
-  <span className="absolute text-xs sm:text-sm lg:text-2xl top-[55%] left-[70%]">
+  {/* U: UI/UX... */}
+  <span className="animate-ping-pong delay-400 absolute text-xs sm:text-sm lg:text-2xl top-[55%] left-[70%]">
     <span className="text-2xl lg:text-3xl font-semibold">U</span>I/UX Designer
   </span>
 
-  {/* T: Tech... (Was top-50, left-180) -> Mid-High Far Right */}
-  <span className="absolute text-xs sm:text-sm lg:text-2xl top-[25%] left-[85%]">
+  {/* T: Tech... */}
+  <span className="animate-ping-pong delay-500 absolute text-xs sm:text-sm lg:text-2xl top-[25%] left-[85%]">
     <span className="text-2xl lg:text-3xl font-semibold">T</span>ech enthusiast
   </span>
+
+  {/* M: Making... (NEW) */}
+  <span className="animate-ping-pong delay-600 absolute text-xs sm:text-sm lg:text-2xl top-[75%] left-[20%]">
+    <span className="text-2xl lg:text-3xl font-semibold">M</span>aking ideas <br /> come to life
+  </span>
+
+  {/* E: Engaging... (NEW) */}
+  <span className="animate-ping-pong delay-700 absolute text-xs sm:text-sm lg:text-2xl top-[40%] left-[30%]">
+    <span className="text-2xl lg:text-3xl font-semibold">E</span>ngaging <br /> digital experiences
+  </span>
+</div>
         </div>
-        {/* <div className="h-[100vh] w-screen sticky z-40   top-0 flex items-center justify-center">
+        <div className="h-[100vh] w-screen sticky z-40   top-0 flex items-center justify-center">
         <Image
           className="rounded-lg z-40  top-20  object-cover h[70vh] lg:h-[90vh] w-auto "
           src="/self5.png"
@@ -142,7 +155,7 @@ const page = () => {
           width={400}
           height={400}
         />
-        </div> */}
+        </div>
 
         
      
