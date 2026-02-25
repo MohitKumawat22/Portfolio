@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="px-6 py-1 w-full flex justify-between bg-white fixed top-0 left-0 z-[100] items-center border-b border-gray-100">
+      <nav className="px-6 py-1 w-full h-15 flex justify-between bg-white fixed top-0 left-0 z-[100] items-center border-b border-gray-100">
         {/* Left Side: Logo */}
         <div className="flex items-center">
           <Link href='/'>

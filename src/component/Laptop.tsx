@@ -2,10 +2,11 @@
 import { Environment, ScrollControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Projectlap from "@/component/Projectlap";
+import Image from "next/image";
 
 const Laptop = () => {
   return (
-    <div className="h-screen w-full ">
+   
       <Canvas  camera={{ fov: 15, position: [0, -10, 200] }}>
         <Environment
           files={[
@@ -16,7 +17,8 @@ const Laptop = () => {
           <Projectlap />
         </ScrollControls>
       </Canvas>
-    </div>
+     
+ 
   );
 };
 

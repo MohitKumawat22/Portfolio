@@ -159,11 +159,21 @@ const page = () => {
 
         
      
-        <div className="h-screen  w-full  " > </div>
+       
       </div>
-      
+      <div className="h-screen w-full relative ">
           <Laptop/>
-        
+           <div className="h-1/2 w-full absolute z-10 top-0  ">
+       <center> <Image
+          src="/p2.jpg"
+          alt="laptop"
+          width={1000}
+          height={1000}
+          className="h-40 mt-30 "
+        />
+        </center>
+      </div>
+        </div>
         {/* <Footer/> */}
  
     </>
