@@ -8,15 +8,17 @@ import StaggeredMenu from "@/components/StaggeredMenu";
 const Navbar = () => {
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-    { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
+    { label: 'Blogs', ariaLabel: 'Read our blogs', link: '/blogs' },
     { label: 'Services', ariaLabel: 'View our services', link: '/services' },
     { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' }
   ];
 
   const socialItems = [
-    { label: 'Twitter', link: 'https://twitter.com' },
     { label: 'GitHub', link: 'https://github.com/MohitKumawat22' },
-    { label: 'LinkedIn', link: 'https://www.linkedin.com/in/mohit-ostwal-kumawat123/' }
+    { label: 'LinkedIn', link: 'https://www.linkedin.com/in/mohit-ostwal-kumawat123/' },
+    { label: 'Instagram', link: 'https://www.instagram.com/dev.mohitkumawat/' },
+    { label: 'WhatsApp', link: 'https://wa.me/7415354618' }
+
   ];
 
   const pathname = usePathname();

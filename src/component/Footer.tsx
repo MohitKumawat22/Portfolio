@@ -1,132 +1,207 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { ArrowRight, Github, Linkedin, Instagram, Twitter, ArrowUp } from 'lucide-react';
+
+// Animated Eye Component (Blinks and shifts on hover)
+const EyeIcon = () => (
+  <svg 
+    viewBox="0 0 100 100" 
+    className="inline-block w-[0.8em] h-[0.8em] mx-2 border-4 border-black rounded-full bg-white transition-all duration-300 group-hover:scale-110"
+    style={{ transform: 'translateY(-0.1em)' }}
+  >
+    <circle cx="50" cy="50" r="35" fill="black" className="transition-all duration-300 group-hover:cx-[65]" />
+    <circle cx="35" cy="35" r="10" fill="white" className="transition-all duration-300 group-hover:cx-[50] group-hover:cy-[30] animate-[pulse_3s_ease-in-out_infinite]" />
+  </svg>
+);
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  const [time, setTime] = useState<string>('');
+
+  // Live clock set to Indore (IST)
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      setTime(now.toLocaleTimeString('en-US', { 
+        timeZone: 'Asia/Kolkata', 
+        hour12: true, 
+        hour: 'numeric', 
+        minute: '2-digit' 
+      }) + ' IST');
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="p-4 md:p-8 bg-white min-h-screen flex flex-col justify-end">
-      <footer className="bg-[#f5f5f5] rounded-[2.5rem] pt-16 px-6 md:px-12 relative overflow-hidden font-sans">
+    // lg:h-screen makes it 100vh on desktop. flex & flex-col structure it perfectly.
+    <footer className="relative bg-[#f8f8f8] text-black font-sans border-t-8 border-black overflow-hidden z-50 flex flex-col justify-between h-auto lg:h-screen lg:min-h-[800px]">
+      
+      {/* Background Graph Paper */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .bg-graph-paper-light {
+          background-size: 40px 40px;
+          background-image: 
+            linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+        }
+      `}} />
+      <div className="absolute inset-0 bg-graph-paper-light pointer-events-none z-0"></div>
+
+      {/* Main Content Area (Expands to fill available space) */}
+      <div className="relative z-10 flex-grow flex flex-col justify-center max-w-[90rem] w-full mx-auto px-6 pt-20 lg:pt-0">
         
-        {/* Top Section: Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 mb-24 max-w-7xl mx-auto z-10 relative">
+        {/* Massive "GET IN TOUCH" Header */}
+        <div className="text-center mb-12 lg:mb-20 group cursor-default">
+          <p className="text-xl md:text-2xl font-bold mb-4 uppercase inline-block relative">
+            Got a project? Need an unfair advantage?
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#FFD100] transform scale-x-0 transition-transform duration-500 origin-left group-hover:scale-x-100"></span>
+          </p>
+          <h2 className="text-[12vw] leading-none font-black uppercase tracking-tighter hover:scale-[1.02] transition-transform duration-500">
+            GET IN T<EyeIcon />UCH
+          </h2>
+        </div>
+
+        {/* Links Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-t-4 border-black pt-10">
           
-          {/* Column 1: Description (Span 4 cols) */}
-          <div className="lg:col-span-4">
-            <h2 className="text-2xl md:text-3xl font-medium leading-tight text-gray-900 max-w-sm">
-              Mohit is independent creative director and solopreneur
-            </h2>
+          {/* Availability Status */}
+          <div className="pr-8 group/section">
+            <h3 className="text-sm font-black uppercase mb-6 border-b-2 border-black pb-2 flex items-center justify-between">
+              Availability <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            </h3>
+            <p className="text-base font-bold leading-tight mb-6">
+              Currently open for freelance projects and exciting collaborations. 
+              Let's build high-performance, scalable digital experiences.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="bg-[#FFD100] border-2 border-black px-2 py-1 text-xs font-bold uppercase hover:-translate-y-1 transition-transform cursor-default shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">MERN</span>
+              <span className="bg-[#5FA8FF] border-2 border-black px-2 py-1 text-xs font-bold uppercase hover:-translate-y-1 transition-transform cursor-default shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Next.js</span>
+              <span className="bg-[#FF7A7A] border-2 border-black px-2 py-1 text-xs font-bold uppercase hover:-translate-y-1 transition-transform cursor-default shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">UI/UX</span>
+            </div>
           </div>
 
-          {/* Column 2: Explore Links (Span 2 cols) */}
-          <div className="lg:col-span-2">
-            <h3 className="text-sm font-semibold text-gray-500 mb-4">Explore</h3>
+          {/* Navigation */}
+          <div>
+            <h3 className="text-sm font-black uppercase mb-6 border-b-2 border-black pb-2">Navigation</h3>
             <ul className="space-y-3">
-              <li><Link href="#" className="text-gray-500 hover:text-black transition-colors">Bio</Link></li>
-              <li><Link href="#" className="text-gray-500 hover:text-black transition-colors">Newsletter</Link></li>
-              <li><Link href="#" className="text-gray-500 hover:text-black transition-colors">Contact</Link></li>
+              {['Home', 'About', 'Services', 'Blogs', 'Contact'].map((item) => (
+                <li key={item}>
+                  <Link href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="group flex items-center text-lg font-bold uppercase transition-all hover:text-[#FF7A7A]">
+                    <ArrowRight size={18} className="mr-2 opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
+                    <span className="-ml-6 transition-all duration-300 group-hover:ml-0">{item}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 3: Social Links (Span 3 cols) */}
-          <div className="lg:col-span-3">
-            <h3 className="text-sm font-semibold text-gray-500 mb-4">Follow me</h3>
-            <div className="grid grid-cols-2 gap-3">
-              <SocialPill icon={<XIcon />} label="@mohit" />
-              <SocialPill icon={<InstagramIcon />} label="@mohit" />
-              <SocialPill icon={<DribbbleIcon />} label="@mohit" />
-              <SocialPill icon={<YoutubeIcon />} label="@mohit" />
-              <SocialPill icon={<FigmaIcon />} label="@mohit" />
-            </div>
+          {/* Socials */}
+          <div>
+            <h3 className="text-sm font-black uppercase mb-6 border-b-2 border-black pb-2">Socials</h3>
+            <ul className="space-y-3">
+              {[
+                { name: 'LinkedIn', icon: <Linkedin size={18} />, link: 'https://linkedin.com/in/mohit-ostwal-kumawat123', color: 'hover:text-[#5FA8FF]' },
+                { name: 'Instagram', icon: <Instagram size={18} />, link: 'https://instagram.com/dev.mohitkumawat', color: 'hover:text-[#FF7A7A]' },
+                { name: 'X (Twitter)', icon: <Twitter size={18} />, link: 'https://twitter.com/MOHITKUMAWATm', color: 'hover:text-[#FFD100]' },
+                { name: 'GitHub', icon: <Github size={18} />, link: 'https://github.com/MohitKumawat22', color: 'hover:text-gray-500' },
+              ].map((social) => (
+                <li key={social.name}>
+                  <a href={social.link} target="_blank" rel="noopener noreferrer" className={`group flex items-center text-lg font-bold uppercase transition-all ${social.color}`}>
+                    <span className="mr-3 p-1 border-2 border-transparent group-hover:border-black group-hover:bg-white transition-all group-hover:-rotate-12 group-hover:scale-110">
+                      {social.icon}
+                    </span>
+                    {social.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Column 4: CTAs (Span 3 cols) */}
-          <div className="lg:col-span-3 flex flex-col gap-8 lg:items-start pl-0 lg:pl-8">
-            {/* Call Action */}
-            <div className="group cursor-pointer">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-xl font-medium text-orange-500 group-hover:text-orange-600 transition-colors">Call Mohit</span>
-                <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <ArrowUpRight color="white" size={14} />
-                </div>
-              </div>
-              <p className="text-sm text-gray-400">Let s work together</p>
-            </div>
-
-            {/* Courses Action */}
-            <div className="group cursor-pointer">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-xl font-medium text-gray-900">Courses & Tools</span>
-                <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <ArrowUpRight color="white" size={14} />
-                </div>
-              </div>
-              <p className="text-sm text-gray-400">Creative tools</p>
-            </div>
+          {/* Direct Contact */}
+          <div>
+            <h3 className="text-sm font-black uppercase mb-6 border-b-2 border-black pb-2">Get In Touch</h3>
+            <ul className="space-y-4">
+              <li>
+                <a href="mailto:dev.mohitkumawat@gmail.com" className="block text-lg font-bold hover:bg-black hover:text-white px-2 py-1 -ml-2 transition-colors border-2 border-transparent hover:border-black break-all group relative overflow-hidden">
+                  <span className="relative z-10">dev.mohitkumawat@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:mohitkumawat2209@gmail.com" className="block text-lg font-bold hover:bg-black hover:text-white px-2 py-1 -ml-2 transition-colors border-2 border-transparent hover:border-black break-all">
+                  mohitkumawat2209@gmail.com
+                </a>
+              </li>
+            </ul>
           </div>
-        </div>
 
-        {/* Bottom Section: Massive Typography */}
-        <div className="w-full flex justify-center">
-          <h1 className="text-[28vw] leading-[0.7] font-black tracking-tighter text-black select-none pointer-events-none -mb-4 md:-mb-10 lg:-mb-14">
-            mohit
-          </h1>
         </div>
-      </footer>
-    </div>
+      </div>
+
+      {/* Bottom Interface Area (Sticks to bottom of the 100vh container) */}
+      <div className="relative z-10 max-w-[90rem] w-full mx-auto px-6 pb-8 lg:pb-10">
+        <div className="flex flex-col md:flex-row justify-between items-end border-t-4 border-black pt-6">
+          
+          <div className="group cursor-default">
+            <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-1 group-hover:text-[#5FA8FF] transition-colors duration-500">
+              MOHIT OSTWAL
+            </h2>
+            <p className="text-xl font-bold uppercase">© {currentYear}</p>
+          </div>
+
+          <div className="flex flex-row gap-8 lg:gap-12 items-end mt-8 md:mt-0">
+            {/* Local Time Indicator */}
+            <div className="text-right group">
+              <p className="text-sm font-black uppercase mb-1 flex items-center justify-end">
+                Local Time <span className="inline-block ml-2 animate-[spin_4s_linear_infinite]">🌍</span>
+              </p>
+              <p className="text-xl font-bold uppercase tracking-wider group-hover:text-[#FFD100] transition-colors">{time || 'LOADING...'}</p>
+            </div>
+
+            {/* Scroll to Top Button */}
+            <button 
+              onClick={scrollToTop}
+              className="group w-14 h-14 border-4 border-black rounded-full flex items-center justify-center bg-white hover:bg-[#FFD100] transition-all hover:-translate-y-2 duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp size={28} strokeWidth={3} className="group-hover:-translate-y-1 transition-transform" />
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Infinite Marquee Geometric Shape Bottom Border */}
+      <div className="w-full bg-black h-16 flex items-center overflow-hidden border-t-4 border-black relative">
+        <div className="flex whitespace-nowrap animate-[marquee_20s_linear_infinite] items-center">
+          {/* We render the shapes twice inside the scrolling div to create an infinite seamless loop */}
+          {[...Array(2)].map((_, i) => (
+            <div key={i} className="flex items-center justify-around w-screen shrink-0">
+              {/* Star */}
+              <svg viewBox="0 0 100 100" className="w-8 h-8 fill-[#FFD100] animate-[spin_6s_linear_infinite]"><path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" /></svg>
+              {/* Diamond */}
+              <svg viewBox="0 0 100 100" className="w-8 h-8 fill-[#5FA8FF] animate-[pulse_2s_ease-in-out_infinite]"><polygon points="50,0 100,50 50,100 0,50" /></svg>
+              {/* Burst */}
+              <svg viewBox="0 0 100 100" className="w-8 h-8 fill-[#FF7A7A] animate-[spin_8s_linear_infinite_reverse]"><path d="M50 0 C50 40 60 50 100 50 C60 50 50 60 50 100 C50 60 40 50 0 50 C40 50 50 40 50 0 Z" /></svg>
+              {/* Cross */}
+              <svg viewBox="0 0 100 100" className="w-8 h-8 fill-white animate-[bounce_3s_infinite]"><polygon points="35,0 65,0 65,35 100,35 100,65 65,65 65,100 35,100 35,65 0,65 0,35 35,35" /></svg>
+              {/* Circle */}
+              <svg viewBox="0 0 100 100" className="w-8 h-8 fill-[#FFD100] animate-[pulse_3s_ease-in-out_infinite]"><circle cx="50" cy="50" r="40" /></svg>
+              {/* Extra shapes for spacing */}
+              <svg viewBox="0 0 100 100" className="w-8 h-8 fill-[#5FA8FF] animate-[spin_5s_linear_infinite]"><path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" /></svg>
+              <svg viewBox="0 0 100 100" className="w-8 h-8 fill-white animate-[spin_10s_linear_infinite_reverse]"><polygon points="35,0 65,0 65,35 100,35 100,65 65,65 65,100 35,100 35,65 0,65 0,35 35,35" /></svg>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </footer>
   );
 }
-
-// --- Helper Components & Icons ---
-
-function SocialPill({ icon, label }: { icon: React.ReactNode; label: string }) {
-  return (
-    <a href="#" className="flex items-center gap-2 bg-white px-3 py-2 rounded-full border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
-      <span className="group-hover:scale-110 transition-transform">{icon}</span>
-      <span className="text-xs font-medium text-gray-600">{label}</span>
-    </a>
-  );
-}
-
-const ArrowUpRight = ({ color = "currentColor", size = 24 }: {color?: string, size?: number}) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M7 17L17 7" />
-    <path d="M7 7h10v10" />
-  </svg>
-);
-
-const XIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0" className="text-black">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
-  </svg>
-);
-
-const InstagramIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-pink-600">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-    </svg>
-);
-
-const DribbbleIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-pink-500">
-      <circle cx="12" cy="12" r="10"></circle>
-      <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-5.38c-3.72-3.8-10.64-4.49-14.24-.96M12 4a14.94 14.94 0 0 0-1.24 16.8"></path>
-    </svg>
-);
-
-const YoutubeIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-600">
-      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path>
-      <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-    </svg>
-);
-
-const FigmaIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600">
-      <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
-      <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path>
-      <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path>
-      <path d="M5 19.5A3.5 3.5 0 0 1 8.5 23H12v-3.5a3.5 3.5 0 1 1-7 0z"></path>
-      <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path>
-    </svg>
-);

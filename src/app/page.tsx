@@ -174,7 +174,7 @@ const page = () => {
         </center>
       </div>
         </div>
-        {/* <Footer/> */}
+        <Footer/>
  
     </>
   );
