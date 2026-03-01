@@ -1,239 +1,52 @@
-
 import Image from "next/image";
 import Link from "next/link";
 
-const page = () => {
+const menuItems = [
+  { name: "Home", href: "/", bg: "bg-orange-600", text: "Welcome To My Space" },
+  { name: "About", href: "/about", bg: "bg-fuchsia-600", text: "Get To Know Me" },
+  { name: "Projects", href: "/projects", bg: "bg-indigo-600", text: "Showcasing Projects" },
+  { name: "Blogs", href: "/blogs", bg: "bg-red-600", text: "Thoughts & Insights" },
+  { name: "Contact", href: "/contact", bg: "bg-yellow-500", text: "Get In Touch" },
+];
+
+export default function Page() {
   return (
-    <div className="h-dvh w-dvw z-30 bg-white absolute top-0 flex items-center justify-center flex-col opacity-80">
-   
-         <Link className="w-full h-[80px]" href='/'>
-     
-      <div className="w-full h-[80px] staticdiv1 relative border border-black  ">
-       <div className=" staticdiv h-[80px] w-full  flex items-center justify-center">
-          <p className="  text-5xl ordinal font-semibold m-auto text-black uppercase ">Home</p>
+    <div className="min-h-screen w-full bg-white flex flex-col items-center justify-center gap-6 p-6">
+      {menuItems.map((item, index) => (
+        <Link
+          key={index}
+          href={item.href}
+          className="group relative w-full max-w-5xl h-[90px] overflow-hidden border border-black"
+        >
+          {/* Default Text */}
+          <div className="absolute inset-0 flex items-center justify-center bg-white transition-all duration-500 group-hover:-translate-y-full">
+            <p className="text-4xl md:text-5xl font-semibold uppercase text-black">
+              {item.name}
+            </p>
           </div>
-          <div className=" whitespace-nowrap opabox   bg-orange-600 h-[80px] w-auto flex ">
-          <div className="whitespace-nowrap movingdiv   h-[80px] w-full flex items-center justify-center">
-              <p className="text-5xl font-semibold  text-white uppercase ">Welcome To My Space</p>
-              <Image
+
+          {/* Hover Animated Section */}
+          <div
+            className={`absolute inset-0 flex items-center justify-center gap-8 ${item.bg} translate-y-full group-hover:translate-y-0 transition-all duration-500`}
+          >
+            <p className="text-3xl md:text-4xl font-semibold text-white uppercase whitespace-nowrap">
+              {item.text}
+            </p>
+
+            <Image
               src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
               height={60}
               width={60}
-              alt="hello dear"
-              />
-                <p className="text-5xl font-semibold  text-white uppercase ">Welcome To My Space</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
+              alt="menu image"
+              className="rounded-full object-cover"
+            />
+
+            <p className="text-3xl md:text-4xl font-semibold text-white uppercase whitespace-nowrap">
+              {item.text}
+            </p>
           </div>
-          <div className="whitespace-nowrap movingdiv  h-[80px] w-full flex items-center justify-center">
-              <p className="text-5xl font-semibold  text-white uppercase ">Welcome To My Space</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-                <p className="text-5xl font-semibold  text-white uppercase ">Welcome To My Space</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-          </div>
-        </div>
-      </div>
- </Link>
- <Link className="w-full h-[80px]" href='/about'>
-         <div className="w-full h-[80px] staticdiv1 relative border border-black  ">
-       <div className=" staticdiv h-[80px] w-full  flex items-center justify-center">
-          <p className="  text-5xl ordinal font-semibold m-auto text-black uppercase ">About</p>
-          </div>
-          <div className=" whitespace-nowrap opabox   bg-fuchsia-600 h-[80px] w-auto flex ">
-          <div className="whitespace-nowrap movingdiv   h-[80px] w-full flex items-center justify-center">
-              <p className="text-5xl font-semibold  text-white uppercase ">Get To Know Me</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-                <p className="text-5xl font-semibold  text-white uppercase ">Get To Know Me</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-          </div>
-          <div className="whitespace-nowrap movingdiv  h-[80px] w-full flex items-center justify-center">
-              <p className="text-5xl font-semibold  text-white uppercase ">Get To Know Me</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-                <p className="text-5xl font-semibold  text-white uppercase ">Get To Know Me</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-          </div>
-        </div>
-      </div>
-      </Link>
-      <Link className="w-full h-[80px]" href='/projects'>
-    <div className="w-full h-[80px] staticdiv1 relative border border-black  ">
-       <div className=" staticdiv h-[80px] w-full  flex items-center justify-center">
-          <p className="  text-5xl ordinal font-semibold m-auto text-black uppercase ">Projects</p>
-          </div>
-          <div className=" whitespace-nowrap opabox   bg-indigo-600 h-[80px] w-auto flex ">
-          <div className="whitespace-nowrap movingdiv   h-[80px] w-full flex items-center justify-center">
-              <p className="text-5xl font-semibold  text-white uppercase ">Showcasing Project</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-                <p className="text-5xl font-semibold  text-white uppercase ">Showcasing Project</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-          </div>
-          <div className="whitespace-nowrap movingdiv  h-[80px] w-full flex items-center justify-center">
-              <p className="text-5xl font-semibold  text-white uppercase ">Showcasing Project</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-                <p className="text-5xl font-semibold  text-white uppercase ">Showcasing Project</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-          </div>
-        </div>
-      </div>
-      </Link>
-      <Link className="w-full h-[80px]" href='/blogs'>
-    <div className="w-full h-[80px] staticdiv1 relative border border-black  ">
-       <div className=" staticdiv h-[80px] w-full  flex items-center justify-center">
-          <p className="  text-5xl ordinal font-semibold m-auto text-black uppercase ">Blogs</p>
-          </div>
-          <div className=" whitespace-nowrap opabox   bg-red-600 h-[80px] w-auto flex ">
-          <div className="whitespace-nowrap movingdiv   h-[80px] w-full flex items-center justify-center">
-              <p className="text-5xl font-semibold  text-white uppercase ">Thoughts & insights</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-                <p className="text-5xl font-semibold  text-white uppercase ">Thoughts & insights</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-          </div>
-          <div className="whitespace-nowrap movingdiv  h-[80px] w-full flex items-center justify-center">
-              <p className="text-5xl font-semibold  text-white uppercase ">Thoughts & insights</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-                <p className="text-5xl font-semibold  text-white uppercase ">Thoughts & insights</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-          </div>
-        </div>
-      </div>
-</Link>
-<Link className="w-full h-[80px]" href='/contact'>
-        <div className="w-full h-[80px] staticdiv1 relative border border-black  ">
-       <div className=" staticdiv h-[80px] w-full  flex items-center justify-center">
-          <p className="  text-5xl ordinal font-semibold m-auto text-black uppercase ">Contact</p>
-          </div>
-          <div className=" whitespace-nowrap opabox   bg-yellow-500 h-[80px] w-auto flex ">
-          <div className="whitespace-nowrap movingdiv   h-[80px] w-full flex items-center justify-center">
-              <p className="text-5xl font-semibold  text-white uppercase ">Get in Touch</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-                <p className="text-5xl font-semibold  text-white uppercase ">Get in Touch</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-          </div>
-          <div className="whitespace-nowrap movingdiv  h-[80px] w-full flex items-center justify-center">
-              <p className="text-5xl font-semibold  text-white uppercase ">Get in Touch</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-                <p className="text-5xl font-semibold  text-white uppercase ">Get in Touch</p>
-              <Image
-              src="/bg1.jpg"
-              className="h-16 shrink-0 mr-10 ml-10 w-40 rounded-full"
-              height={60}
-              width={60}
-              alt="hello dear"
-              />
-          </div>
-        </div>
-      </div>
-      </Link>
+        </Link>
+      ))}
     </div>
   );
-};
-
-export default page;
+}

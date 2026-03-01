@@ -20,7 +20,7 @@ export default function ContactPage() {
         {/* Header */}
         <div className="mb-16 flex flex-col items-start md:items-center md:justify-center md:text-center">
           <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-black tracking-tighter uppercase leading-none">
-            LET'S TALK
+            LET&apos;S TALK
           </h1>
           <p className="mt-6 text-xl md:text-2xl font-bold bg-[#FFD100] border-2 border-black text-black px-4 py-2 inline-block transform rotate-1">
             OPEN FOR FREELANCE & COLLABORATIONS

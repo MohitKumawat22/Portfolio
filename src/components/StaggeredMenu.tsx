@@ -30,7 +30,6 @@ export interface StaggeredMenuProps {
   onMenuClose?: () => void;
 }
 
-// Fix Next.js SSR warning for useLayoutEffect
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 export const StaggeredMenu = ({
@@ -99,7 +98,6 @@ export const StaggeredMenu = ({
     return () => ctx.revert();
   }, [menuButtonColor, position]);
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
       openTlRef.current?.kill();
@@ -417,7 +415,7 @@ export const StaggeredMenu = ({
         <aside
           id="staggered-menu-panel"
           ref={panelRef}
-          className="staggered-menu-panel absolute top-0 right-0 h-full bg-gray-500 flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px] pointer-events-auto"
+          className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px] pointer-events-auto"
           style={{ WebkitBackdropFilter: 'blur(12px)' }}
           aria-hidden={!open}
         >
@@ -457,7 +455,7 @@ export const StaggeredMenu = ({
               <div className="sm-socials mt-auto pt-8 flex flex-col gap-3" aria-label="Social links">
                 <h3 className="sm-socials-title m-0 text-base font-medium [color:var(--sm-accent,#ff0000)]">Socials</h3>
                 <ul
-                  className="sm-socials-list list-none m-0 p-0 flex flex-row items-center gap-1 flex-wrap"
+                  className="sm-socials-list list-none m-0 p-0 flex flex-row items-center gap-4 flex-wrap"
                   role="list"
                 >
                   {socialItems.map((s, i) => (
@@ -466,7 +464,7 @@ export const StaggeredMenu = ({
                         href={s.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="sm-socials-link text-sm font-medium text-[#111] no-underline relative inline-block py-[1px] transition-[color,opacity] duration-300 ease-linear"
+                        className="sm-socials-link text-[1.2rem] font-medium text-[#111] no-underline relative inline-block py-[2px] transition-[color,opacity] duration-300 ease-linear"
                       >
                         {s.label}
                       </a>

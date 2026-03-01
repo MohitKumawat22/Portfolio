@@ -90,10 +90,10 @@ export default function ServicesPage() {
         </div>
 
         {/* Decorative Ribbon Element at the bottom (matching landing page) */}
-        <div className="relative mt-32 h-20 w-full flex justify-center items-center overflow-visible">
+        <div className="relative mt-32 h-20 w-full flex justify-center items-center overflow-hidden">
           <div className="absolute w-[120%] h-12 bg-[#FFD100] transform -rotate-2 border-y-4 border-black flex items-center overflow-hidden">
             <div className="animate-marquee whitespace-nowrap text-xl font-black tracking-widest">
-              AVAILABLE FOR FREELANCE • LET'S BUILD SOMETHING COOL • AVAILABLE FOR FREELANCE • LET'S BUILD SOMETHING COOL • AVAILABLE FOR FREELANCE • LET'S BUILD SOMETHING COOL •
+              AVAILABLE FOR FREELANCE • LET&apos;S BUILD SOMETHING COOL • AVAILABLE FOR FREELANCE • LET&apos;S BUILD SOMETHING COOL • AVAILABLE FOR FREELANCE • LET&apos;S BUILD SOMETHING COOL •
             </div>
           </div>
         </div>

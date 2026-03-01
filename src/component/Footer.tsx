@@ -78,7 +78,7 @@ export default function Footer() {
             </h3>
             <p className="text-sm lg:text-base font-bold leading-snug mb-4">
               Currently open for freelance projects and exciting collaborations. 
-              Let's build high-performance, scalable digital experiences.
+              Let&apos;s build high-performance, scalable digital experiences.
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="bg-[#FFD100] border-2 border-black px-2 py-0.5 text-xs font-bold uppercase hover:-translate-y-1 transition-transform cursor-default">MERN</span>

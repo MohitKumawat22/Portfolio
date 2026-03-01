@@ -11,6 +11,7 @@ import Footer from "@/component/Footer";
 import "./globals.css";
 import Eyes from "@/component/eyesss";
 import Laptop from "../component/Laptop";
+import AboutSection from "@/component/Aboutsection";
 
 const page = () => {
   return (
@@ -149,7 +150,7 @@ const page = () => {
         </div>
         <div className="h-[100vh] w-screen sticky z-40   top-0 flex items-center justify-center">
         <Image
-          className="rounded-lg z-40  top-20  object-cover h[70vh] lg:h-[90vh] w-auto "
+          className="rounded-lg z-40  top-20  object-cover h-[70vh] lg:h-[90vh] w-auto "
           src="/self5.png"
           alt="my profile"
           width={400}
@@ -169,12 +170,13 @@ const page = () => {
           alt="laptop"
           width={1000}
           height={1000}
-          className="h-40 mt-30 "
+          className="h-40 mt-10 "
         />
         </center>
       </div>
         </div>
         <Footer/>
+        <AboutSection/>
  
     </>
   );
