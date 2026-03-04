@@ -2,15 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function BlogsPage() {
-  // Pre-filled with your recent hackathon and tech event experiences
   const blogs = [
     {
       id: '01',
-      title: 'WINNING AT HACKANDMAKE BHOPAL',
+      title: 'HACKANDMAKE BHOPAL',
       date: 'Jan 11, 2026',
       readTime: '3 MIN READ',
       snippet: 'Presented our HealthTech web app at the HackAndMake hackathon at Jehan Numa Palace. Had an amazing time building, networking, and even got to meet Aman Gupta and Anubhav Dubey!',
-      color: 'bg-[#FF7A7A]', // Pink
+      accent: 'bg-[#FF7A7A]',
       link: '#'
     },
     {
@@ -19,7 +18,7 @@ export default function BlogsPage() {
       date: 'Jan 09, 2026',
       readTime: '4 MIN READ',
       snippet: 'Stepped up as a team leader at SnowHacks! We built an impactful health awareness platform from scratch. Incredibly proud of the team dynamics and the technical hurdles we overcame.',
-      color: 'bg-[#5FA8FF]', // Blue
+      accent: 'bg-[#5FA8FF]',
       link: '#'
     },
     {
@@ -28,7 +27,7 @@ export default function BlogsPage() {
       date: 'Jan 03, 2026',
       readTime: '5 MIN READ',
       snippet: 'Spent an incredible weekend at Build Station Indore learning the ins and outs of Web3. Got hands-on experience building on the Aptos blockchain using the Move language.',
-      color: 'bg-[#FFD100]', // Yellow
+      accent: 'bg-[#FFD100]',
       link: '#'
     },
     {
@@ -37,82 +36,82 @@ export default function BlogsPage() {
       date: 'Dec 22, 2025',
       readTime: '4 MIN READ',
       snippet: 'Attended DevFest 2025 in Indore. Focused heavily on the entrepreneurship track to level up my freelancing journey and learn how to build sustainable, scalable tech products.',
-      color: 'bg-white',
+      accent: 'bg-[#FF7A7A]',
       link: '#'
     },
   ];
 
   return (
-    <div className="min-h-screen relative bg-white text-black font-sans overflow-hidden pb-20">
-      {/* Custom Grid Background */}
-      <style dangerouslySetInnerHTML={{__html: `
-        .bg-graph-paper {
-          background-size: 40px 40px;
-          background-image: 
-            linear-gradient(to right, #e5e7eb 1px, transparent 1px),
-            linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
-        }
-      `}} />
-      
-      <div className="absolute inset-0 bg-graph-paper pointer-events-none z-0"></div>
+    <div className="min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white font-sans transition-colors duration-300">
 
-      <main className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-32">
-        
+      <main className="max-w-6xl mx-auto px-6 py-20 lg:py-28">
+
         {/* Page Header */}
-        <div className="mb-20 flex flex-col items-start md:items-center justify-center text-center">
-          <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-black tracking-tighter uppercase leading-none">
-            UPDATES
-          </h1>
-          <p className="mt-6 text-xl md:text-2xl font-bold bg-black text-white px-4 py-2 inline-block transform -rotate-2">
-            HACKATHONS, BUILDS & THOUGHTS
-          </p>
+        <div className="mb-20">
+          <div className="flex items-end gap-4 mb-4">
+            <h1 className="text-7xl md:text-8xl lg:text-[10rem] font-black tracking-tighter uppercase leading-[0.85]">
+              BLOG
+            </h1>
+            <div className="h-3 w-3 bg-[#FF7A7A] rounded-full mb-4 animate-pulse"></div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="h-[3px] w-16 bg-[#FFD100]"></div>
+            <p className="text-lg md:text-xl font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              Hackathons, Builds & Thoughts
+            </p>
+          </div>
         </div>
 
-        {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
-          {blogs.map((blog) => (
-            <article 
-              key={blog.id} 
-              className="group relative flex flex-col h-full"
-            >
-              {/* Brutalist Shadow Background */}
-              <div className="absolute inset-0 border-4 border-black bg-black translate-x-3 translate-y-3 pointer-events-none transition-transform duration-300 group-hover:translate-x-5 group-hover:translate-y-5"></div>
-              
-              {/* Card Content */}
-              <div className={`relative z-10 flex flex-col h-full border-4 border-black p-6 md:p-8 ${blog.color} transition-transform duration-300 group-hover:-translate-y-2 group-hover:-translate-x-2`}>
-                
-                {/* Meta Info */}
-                <div className="flex justify-between items-center border-b-4 border-black pb-4 mb-4">
-                  <span className="font-bold text-lg uppercase bg-white border-2 border-black px-2 py-1 transform -rotate-1">
-                    {blog.date}
-                  </span>
-                  <span className="font-bold text-sm uppercase tracking-wider">
-                    {blog.readTime}
-                  </span>
-                </div>
-                
-                {/* Title */}
-                <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight leading-none mb-4">
-                  {blog.title}
-                </h2>
-                
-                {/* Snippet */}
-                <p className="text-lg font-medium leading-snug mb-8 flex-grow">
-                  {blog.snippet}
-                </p>
-                
-                {/* Read More Button */}
-                <div className="mt-auto">
-                  <Link href={blog.link} className="inline-block relative w-full text-center group/btn">
-                    <div className="absolute inset-0 bg-black translate-x-1 translate-y-1 transition-transform group-hover/btn:translate-x-2 group-hover/btn:translate-y-2"></div>
-                    <div className="relative z-10 bg-white border-4 border-black py-3 px-6 font-black text-xl uppercase transition-colors group-hover/btn:bg-black group-hover/btn:text-white">
-                      Read Full Post ↗
-                    </div>
-                  </Link>
-                </div>
+        {/* Blog List */}
+        <div className="flex flex-col">
+          {blogs.map((blog, index) => (
+            <Link href={blog.link} key={blog.id} className="group">
+              <article
+                className={`py-10 md:py-14 border-t-[2px] border-black/10 dark:border-white/10 ${index === blogs.length - 1 ? 'border-b-[2px]' : ''}`}
+              >
+                <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
 
-              </div>
-            </article>
+                  {/* Left: Number + Accent */}
+                  <div className="flex items-center gap-4 md:w-24 shrink-0">
+                    <span className="text-5xl md:text-6xl font-black text-black/10 dark:text-white/10 group-hover:text-black/30 dark:group-hover:text-white/30 transition-colors">
+                      {blog.id}
+                    </span>
+                    <div className={`w-2 h-12 rounded-full ${blog.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                  </div>
+
+                  {/* Center: Content */}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+                        {blog.date}
+                      </span>
+                      <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+                        {blog.readTime}
+                      </span>
+                    </div>
+
+                    <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight leading-tight mb-4 group-hover:translate-x-2 transition-transform duration-300">
+                      {blog.title}
+                    </h2>
+
+                    <p className="text-base md:text-lg font-medium leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">
+                      {blog.snippet}
+                    </p>
+                  </div>
+
+                  {/* Right: Arrow */}
+                  <div className="hidden md:flex items-center justify-center w-14 h-14 rounded-full border-2 border-black/10 dark:border-white/10 group-hover:border-black dark:group-hover:border-white group-hover:bg-black dark:group-hover:bg-white transition-all duration-300 shrink-0 self-center">
+                    <svg
+                      className="w-5 h-5 text-black/30 dark:text-white/30 group-hover:text-white dark:group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
+                      fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
+                    </svg>
+                  </div>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
 

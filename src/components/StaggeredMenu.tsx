@@ -386,9 +386,8 @@ export const StaggeredMenu = ({
         >
           <button
             ref={toggleBtnRef}
-            className={`sm-toggle relative inline-flex items-center justify-center -top-2 sm:-top-2 md:-top-1 lg:top-1 lg:right-5 bg-transparent border-0 cursor-pointer overflow-visible pointer-events-auto transition-colors ${
-              open ? 'text-black' : 'text-[#e9e9ef]'
-            }`}
+            className={`sm-toggle relative inline-flex items-center justify-center -top-2 sm:-top-2 md:-top-1 lg:top-1 lg:right-5 bg-transparent border-0 cursor-pointer overflow-visible pointer-events-auto transition-colors ${open ? 'text-black' : 'text-[#e9e9ef]'
+              }`}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             aria-controls="staggered-menu-panel"
@@ -485,7 +484,8 @@ export const StaggeredMenu = ({
 .sm-scope .sm-icon { position: relative; width: 24px; height: 24px; flex: 0 0 24px; display: inline-flex; align-items: center; justify-content: center; will-change: transform; }
 .sm-scope .sm-panel-itemWrap { position: relative; overflow: hidden; line-height: 1; }
 .sm-scope .sm-icon-line { position: absolute; left: 50%; top: 50%; width: 100%; height: 3px; background: currentColor; border-radius: 3px; transform: translate(-50%, -50%); will-change: transform; }
-.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(260px, 38vw, 420px); height: 100%; background: white; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 6em 2em 2em 2em; overflow-y: auto; z-index: 10; pointer-events: auto; }
+.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(260px, 38vw, 420px); height: 100%; background: white; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 6em 2em 2em 2em; overflow-y: auto; z-index: 10; pointer-events: auto; transition: background 0.3s ease, color 0.3s ease; }
+.dark .sm-scope .staggered-menu-panel { background: #0a0a0f; }
 .sm-scope [data-position='left'] .staggered-menu-panel { right: auto; left: 0; }
 .sm-scope .sm-prelayers { position: absolute; top: 0; right: 0; bottom: 0; width: clamp(260px, 38vw, 420px); pointer-events: none; z-index: 5; }
 .sm-scope [data-position='left'] .sm-prelayers { right: auto; left: 0; }
@@ -501,10 +501,12 @@ export const StaggeredMenu = ({
 .sm-scope .sm-socials-list .sm-socials-link:focus-visible { opacity: 1; }
 .sm-scope .sm-socials-link:focus-visible { outline: 2px solid var(--sm-accent, #ff0000); outline-offset: 3px; }
 .sm-scope .sm-socials-link { font-size: 1.2rem; font-weight: 500; color: #111; text-decoration: none; position: relative; padding: 2px 0; display: inline-block; transition: color 0.3s ease, opacity 0.3s ease; }
+.dark .sm-scope .sm-socials-link { color: #ddd; }
 .sm-scope .sm-socials-link:hover { color: var(--sm-accent, #ff0000); }
 .sm-scope .sm-panel-title { margin: 0; font-size: 1rem; font-weight: 600; color: #fff; text-transform: uppercase; }
 .sm-scope .sm-panel-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
 .sm-scope .sm-panel-item { position: relative; color: #000; font-weight: 600; font-size: 4rem; cursor: pointer; line-height: 1; letter-spacing: -2px; text-transform: uppercase; transition: background 0.25s, color 0.25s; display: inline-block; text-decoration: none; padding-right: 1.4em; }
+.dark .sm-scope .sm-panel-item { color: #fff; }
 .sm-scope .sm-panel-itemLabel { display: inline-block; will-change: transform; transform-origin: 50% 100%; }
 .sm-scope .sm-panel-item:hover { color: var(--sm-accent, #ff0000); }
 .sm-scope .sm-panel-list[data-numbering] { counter-reset: smItem; }

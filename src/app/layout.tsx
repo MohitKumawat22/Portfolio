@@ -4,7 +4,8 @@ import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/Navbar";
 import "sheryjs/dist/Shery.css";
- 
+import { ThemeProvider } from "@/component/theme-provider";
+
 // Poppins is not a variable font, so we must specify the weights we need
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,15 +30,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning  >
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${poppins.variable}  ${montserrat.variable} antialiased`}
       >
-      
-
-        <Navbar  />
-        {children}
-      
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange={false}
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

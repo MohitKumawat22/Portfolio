@@ -20,10 +20,10 @@ const HoverGrid = () => {
   }, []);
 
   return (
-    <div className="absolute top-0 z-1 inset-0  overflow-hidden">
-      <div 
-        className="grid" 
-        style={{ 
+    <div className="absolute top-0 z-1 inset-0 overflow-hidden">
+      <div
+        className="grid"
+        style={{
           gridTemplateColumns: `repeat(${gridSize.cols}, ${cellSize}px)`,
         }}
       >
@@ -32,14 +32,13 @@ const HoverGrid = () => {
             key={i}
             style={{ width: cellSize, height: cellSize }}
             className="
-              border-[0.5px] border-gray-200 z-10
+              border-[0.5px] border-gray-200 dark:border-gray-800 z-10
               transition-all duration-200 ease-out
               hover:scale-115 hover:z-50 hover:border-none 
-              hover:bg-black hover:shadow-xl
+              hover:bg-black dark:hover:bg-white hover:shadow-xl
               flex items-center justify-center
             "
           >
-            {/* Aap yaha text ya content bhi daal sakte hain */}
           </div>
         ))}
       </div>

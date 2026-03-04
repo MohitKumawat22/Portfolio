@@ -146,17 +146,25 @@
   color: rgb(110, 106, 106);
   font-weight: bold;
   border: 1px solid rgba(0, 0, 0, 0.4);
-  /* box-shadow: 0 4px 15px rgba(159, 239, 0, 0.2); */
   cursor: pointer;
   transition: transform 0.2s;
-  
+}
+.dark .aminebuttons {
+  color: rgb(180, 180, 180);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .aminebuttons:hover {
   color: black;
   scale: 1.1;
 }
+.dark .aminebuttons:hover {
+  color: white;
+}
 .innershadow{
   box-shadow: inset 12px 0px 20px 70px rgb(255, 255, 255);
+}
+.dark .innershadow{
+  box-shadow: inset 12px 0px 20px 70px rgb(10, 10, 15);
 }
 .hoverkar{
   background-color: rgb(255, 145, 0);

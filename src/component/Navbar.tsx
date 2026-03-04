@@ -4,6 +4,9 @@ import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa6";
 import { usePathname } from 'next/navigation';
 import StaggeredMenu from "@/components/StaggeredMenu";
+import { ThemeToggle } from "./ThemeToggle";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const menuItems = [
@@ -22,33 +25,44 @@ const Navbar = () => {
   ];
 
   const pathname = usePathname();
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const isDark = mounted && theme === "dark";
+  const btnColor = isDark ? "#ffffff" : "#000000";
 
   return (
     <>
-      <nav className="px-6 py-1 w-full h-15 flex justify-between bg-white fixed top-0 left-0 z-[100] items-center border-b border-gray-100">
+      <nav className="px-6 py-1 w-full h-15 flex justify-between bg-white dark:bg-gray-950 fixed top-0 left-0 z-[100] items-center border-b border-gray-100 dark:border-gray-800 transition-colors duration-300">
         {/* Left Side: Logo */}
         <div className="flex items-center">
           <Link href='/'>
-            <h3 className="text-2xl sm:py-2 md:text-2xl text-black font-poppins uppercase font-bold tracking-tighter">
+            <h3 className="text-2xl sm:py-2 md:text-2xl text-black dark:text-white font-poppins uppercase font-bold tracking-tighter">
               Portfolio
             </h3>
           </Link>
         </div>
 
-        {/* Center/Right Side: Social Links (Hidden on small screens for better spacing) */}
-        <div className="hidden md:flex items-center gap-2">
-          <Link href="https://github.com/MohitKumawat22" target="_blank" className="hover:scale-110 transition-transform p-2"> 
-            <FaGithub className="text-3xl text-black" /> 
-          </Link>
-          <Link href="https://www.linkedin.com/in/mohit-ostwal-kumawat123/" target="_blank" className="hover:scale-110 transition-transform p-2"> 
-            <FaLinkedin className="text-3xl text-black" /> 
-          </Link>
-          <Link href="https://wa.me/7415354618" target="_blank" className="hover:scale-110 transition-transform p-2"> 
-            <FaWhatsapp className="text-3xl text-black" /> 
-          </Link>
-          <Link href="https://www.instagram.com/dev.mohitkumawat/ " target="_blank" className="hover:scale-110 transition-transform p-2">
-           <FaInstagram className="text-3xl text-white invert" /> </Link>
- 
+        {/* Center/Right Side: Social Links + Theme Toggle */}
+        <div className="flex items-center gap-2">
+          {/* Social icons - hidden on small screens */}
+          <div className="hidden md:flex items-center gap-2">
+            <Link href="https://github.com/MohitKumawat22" target="_blank" className="hover:scale-110 transition-transform p-2">
+              <FaGithub className="text-3xl text-black dark:text-white" />
+            </Link>
+            <Link href="https://www.linkedin.com/in/mohit-ostwal-kumawat123/" target="_blank" className="hover:scale-110 transition-transform p-2">
+              <FaLinkedin className="text-3xl text-black dark:text-white" />
+            </Link>
+            <Link href="https://wa.me/7415354618" target="_blank" className="hover:scale-110 transition-transform p-2">
+              <FaWhatsapp className="text-3xl text-black dark:text-white" />
+            </Link>
+            <Link href="https://www.instagram.com/dev.mohitkumawat/ " target="_blank" className="hover:scale-110 transition-transform p-2">
+              <FaInstagram className="text-3xl text-black dark:text-white" /> </Link>
+          </div>
+
+          {/* Theme Toggle - always visible */}
+          <ThemeToggle />
         </div>
 
         {/* Right Side: Menu Trigger */}
@@ -59,9 +73,8 @@ const Navbar = () => {
             socialItems={socialItems}
             displaySocials={true}
             displayItemNumbering={true}
-            // Fix: Set button color to black to see it on white nav
-            menuButtonColor="#000000" 
-            openMenuButtonColor="#000000"
+            menuButtonColor={btnColor}
+            openMenuButtonColor={btnColor}
             changeMenuColorOnOpen={true}
             colors={['#63b3ed', '#f87171']}
             accentColor="#FCD34D"

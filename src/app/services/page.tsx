@@ -1,103 +1,109 @@
 import React from 'react';
 
-// You can place this in your pages/services.tsx or app/services/page.tsx depending on your Next.js router
 export default function ServicesPage() {
   const services = [
     {
       id: '01',
       title: 'MERN STACK DEVELOPMENT',
       description: 'Building scalable, high-performance web applications from the ground up using MongoDB, Express, React, and Node.js.',
-      color: 'bg-[#FFD100]', // Yellow from your ribbon
+      accent: '#FFD100',
     },
     {
       id: '02',
       title: 'UI/UX DESIGN',
       description: 'Crafting intuitive, user-centric interfaces and wireframes that ensure a seamless and engaging digital experience.',
-      color: 'bg-[#FF7A7A]', // Pink/Red from your ribbon
+      accent: '#FF7A7A',
     },
     {
       id: '03',
       title: 'FREELANCE WEBSITES',
       description: 'Delivering zero-maintenance, high-speed, and cost-effective websites tailored precisely to client and business needs.',
-      color: 'bg-[#5FA8FF]', // Blue from your ribbon
+      accent: '#5FA8FF',
     },
     {
       id: '04',
       title: 'AI & 3D EXPERIENCES',
       description: 'Integrating LLM capabilities and building immersive, interactive 3D web environments using Three.js and GLSL.',
-      color: 'bg-white',
+      accent: '#FFD100',
     },
   ];
 
   return (
-    <div className="min-h-screen relative bg-white text-black font-sans overflow-hidden">
-      {/* Custom Grid Background - mimicking the graph paper look */}
-      <style dangerouslySetInnerHTML={{__html: `
-        .bg-graph-paper {
-          background-size: 40px 40px;
-          background-image: 
-            linear-gradient(to right, #e5e7eb 1px, transparent 1px),
-            linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
-        }
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          display: inline-block;
-          animation: marquee 20s linear infinite;
-        }
-      `}} />
-      
-      {/* Background Wrapper */}
-      <div className="absolute inset-0 bg-graph-paper pointer-events-none z-0"></div>
+    <div className="min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white font-sans transition-colors duration-300">
 
-      {/* Main Content */}
-      <main className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-32">
-        
+      <main className="max-w-6xl mx-auto px-6 py-20 lg:py-28">
+
         {/* Page Header */}
-        <div className="mb-20 flex flex-col items-center justify-center text-center">
-          <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-black tracking-tighter uppercase leading-none">
-            SERVICES
-          </h1>
-          <p className="mt-6 text-xl md:text-2xl font-bold bg-black text-white px-4 py-2 inline-block transform -rotate-1">
-            WHAT I BRING TO THE TABLE
-          </p>
+        <div className="mb-20">
+          <div className="flex items-end gap-4 mb-4">
+            <h1 className="text-7xl md:text-8xl lg:text-[10rem] font-black tracking-tighter uppercase leading-[0.85]">
+              SERVICES
+            </h1>
+            <div className="h-3 w-3 bg-[#5FA8FF] rounded-full mb-4 animate-pulse"></div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="h-[3px] w-16 bg-[#FFD100]"></div>
+            <p className="text-lg md:text-xl font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              What I Bring to the Table
+            </p>
+          </div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {services.map((service) => (
-            <div 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t-[2px] border-black/10 dark:border-white/10">
+          {services.map((service, index) => (
+            <div
               key={service.id}
-              className={`group relative border-4 border-black p-8 transition-transform duration-300 hover:-translate-y-2 hover:translate-x-2 ${service.color}`}
+              className={`group relative p-8 md:p-12 border-b-[2px] border-black/10 dark:border-white/10 ${index % 2 === 0 ? 'md:border-r-[2px]' : ''
+                } hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors duration-300`}
             >
-              {/* Brutalist Drop Shadow Effect using a pseudo-element strategy */}
-              <div className="absolute inset-0 border-4 border-black bg-transparent translate-x-3 translate-y-3 -z-10 pointer-events-none transition-transform duration-300 group-hover:translate-x-5 group-hover:translate-y-5"></div>
-              
-              <div className="flex justify-between items-start mb-6 border-b-4 border-black pb-4">
-                <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight w-3/4 leading-none">
-                  {service.title}
-                </h2>
-                <span className="text-4xl font-black">{service.id}</span>
+              {/* Accent line on hover */}
+              <div
+                className="absolute top-0 left-0 w-0 h-[3px] group-hover:w-full transition-all duration-500 ease-out"
+                style={{ backgroundColor: service.accent }}
+              ></div>
+
+              {/* Number */}
+              <div className="flex items-center justify-between mb-8">
+                <span className="text-6xl md:text-7xl font-black text-black/[0.06] dark:text-white/[0.06] group-hover:text-black/[0.15] dark:group-hover:text-white/[0.15] transition-colors">
+                  {service.id}
+                </span>
+                <div
+                  className="w-2.5 h-2.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ backgroundColor: service.accent }}
+                ></div>
               </div>
-              
-              <p className="text-lg md:text-xl font-medium leading-snug">
+
+              {/* Title */}
+              <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight leading-tight mb-5 group-hover:translate-x-1 transition-transform duration-300">
+                {service.title}
+              </h2>
+
+              {/* Description */}
+              <p className="text-base md:text-lg font-medium leading-relaxed text-gray-500 dark:text-gray-400">
                 {service.description}
               </p>
+
+              {/* Bottom accent dash */}
+              <div
+                className="mt-8 h-[2px] w-8 group-hover:w-16 transition-all duration-500"
+                style={{ backgroundColor: service.accent }}
+              ></div>
             </div>
           ))}
         </div>
 
-        {/* Decorative Ribbon Element at the bottom (matching landing page) */}
-        <div className="relative mt-32 h-20 w-full flex justify-center items-center overflow-hidden">
-          <div className="absolute w-[120%] h-12 bg-[#FFD100] transform -rotate-2 border-y-4 border-black flex items-center overflow-hidden">
-            <div className="animate-marquee whitespace-nowrap text-xl font-black tracking-widest">
-              AVAILABLE FOR FREELANCE • LET&apos;S BUILD SOMETHING COOL • AVAILABLE FOR FREELANCE • LET&apos;S BUILD SOMETHING COOL • AVAILABLE FOR FREELANCE • LET&apos;S BUILD SOMETHING COOL •
-            </div>
+        {/* Bottom CTA Ribbon */}
+        <div className="mt-20 flex items-center justify-center">
+          <div className="flex items-center gap-6">
+            <div className="h-[2px] w-12 bg-[#FFD100]"></div>
+            <p className="text-lg md:text-xl font-black uppercase tracking-widest text-gray-400 dark:text-gray-500">
+              Available for Freelance
+            </p>
+            <div className="h-[2px] w-12 bg-[#FF7A7A]"></div>
           </div>
         </div>
-        
+
       </main>
     </div>
   );

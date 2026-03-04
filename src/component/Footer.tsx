@@ -6,13 +6,13 @@ import { ArrowRight, Github, Linkedin, Instagram, Twitter, ArrowUp } from 'lucid
 
 // Animated Eye Component
 const EyeIcon = () => (
-  <svg 
-    viewBox="0 0 100 100" 
-    className="inline-block w-[0.8em] h-[0.8em] mx-2 border-4 border-black rounded-full bg-white transition-all duration-300 group-hover:scale-110"
+  <svg
+    viewBox="0 0 100 100"
+    className="inline-block w-[0.8em] h-[0.8em] mx-2 border-4 border-black dark:border-white rounded-full bg-white dark:bg-gray-900 transition-all duration-300 group-hover:scale-110"
     style={{ transform: 'translateY(-0.1em)' }}
   >
-    <circle cx="50" cy="50" r="35" fill="black" className="transition-all duration-300 group-hover:cx-[65]" />
-    <circle cx="35" cy="35" r="10" fill="white" className="transition-all duration-300 group-hover:cx-[50] group-hover:cy-[30] animate-[pulse_3s_ease-in-out_infinite]" />
+    <circle cx="50" cy="50" r="35" fill="currentColor" className="text-black dark:text-white transition-all duration-300 group-hover:cx-[65]" />
+    <circle cx="35" cy="35" r="10" fill="white" className="dark:fill-gray-900 transition-all duration-300 group-hover:cx-[50] group-hover:cy-[30] animate-[pulse_3s_ease-in-out_infinite]" />
   </svg>
 );
 
@@ -24,11 +24,11 @@ export default function Footer() {
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      setTime(now.toLocaleTimeString('en-US', { 
-        timeZone: 'Asia/Kolkata', 
-        hour12: true, 
-        hour: 'numeric', 
-        minute: '2-digit' 
+      setTime(now.toLocaleTimeString('en-US', {
+        timeZone: 'Asia/Kolkata',
+        hour12: true,
+        hour: 'numeric',
+        minute: '2-digit'
       }) + ' IST');
     };
     updateTime();
@@ -41,22 +41,28 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#f8f8f8] text-black font-sans border-t-8 border-black overflow-hidden z-50 flex flex-col justify-between h-auto lg:h-screen lg:min-h-[750px]">
-      
+    <footer className="relative bg-[#f8f8f8] dark:bg-gray-950 text-black dark:text-white font-sans border-t-8 border-black dark:border-white overflow-hidden z-50 flex flex-col justify-between h-auto lg:h-screen lg:min-h-[750px] transition-colors duration-300">
+
       {/* Background Graph Paper */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .bg-graph-paper-light {
           background-size: 40px 40px;
           background-image: 
             linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
         }
+        .dark .bg-graph-paper-light {
+          background-image: 
+            linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+        }
       `}} />
       <div className="absolute inset-0 bg-graph-paper-light pointer-events-none z-0"></div>
 
       {/* Main Content Area */}
       <div className="relative z-10 flex-grow flex flex-col justify-center max-w-[90rem] w-full mx-auto px-6 pt-16 lg:pt-0">
-        
+
         {/* Massive "GET IN TOUCH" Header */}
         <div className="text-center mb-8 lg:mb-12 group cursor-default">
           <p className="text-lg md:text-xl font-bold mb-2 uppercase inline-block relative">
@@ -68,28 +74,28 @@ export default function Footer() {
           </h2>
         </div>
 
-        {/* Links Grid - Reduced gap from gap-12 to gap-8 for tighter laptop view */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8 border-t-[3px] border-black pt-8">
-          
+        {/* Links Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8 border-t-[3px] border-black dark:border-white pt-8">
+
           {/* Availability Status */}
           <div className="pr-4 group/section">
-            <h3 className="text-sm font-black uppercase mb-4 border-b-2 border-black pb-1 flex items-center justify-between">
+            <h3 className="text-sm font-black uppercase mb-4 border-b-2 border-black dark:border-white pb-1 flex items-center justify-between">
               Availability <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
             </h3>
             <p className="text-sm lg:text-base font-bold leading-snug mb-4">
-              Currently open for freelance projects and exciting collaborations. 
+              Currently open for freelance projects and exciting collaborations.
               Let&apos;s build high-performance, scalable digital experiences.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="bg-[#FFD100] border-2 border-black px-2 py-0.5 text-xs font-bold uppercase hover:-translate-y-1 transition-transform cursor-default">MERN</span>
-              <span className="bg-[#5FA8FF] border-2 border-black px-2 py-0.5 text-xs font-bold uppercase hover:-translate-y-1 transition-transform cursor-default">Next.js</span>
-              <span className="bg-[#FF7A7A] border-2 border-black px-2 py-0.5 text-xs font-bold uppercase hover:-translate-y-1 transition-transform cursor-default">UI/UX</span>
+              <span className="bg-[#FFD100] border-2 border-black px-2 py-0.5 text-xs font-bold uppercase hover:-translate-y-1 transition-transform cursor-default text-black">MERN</span>
+              <span className="bg-[#5FA8FF] border-2 border-black px-2 py-0.5 text-xs font-bold uppercase hover:-translate-y-1 transition-transform cursor-default text-black">Next.js</span>
+              <span className="bg-[#FF7A7A] border-2 border-black px-2 py-0.5 text-xs font-bold uppercase hover:-translate-y-1 transition-transform cursor-default text-black">UI/UX</span>
             </div>
           </div>
 
           {/* Navigation */}
           <div>
-            <h3 className="text-sm font-black uppercase mb-4 border-b-2 border-black pb-1">Navigation</h3>
+            <h3 className="text-sm font-black uppercase mb-4 border-b-2 border-black dark:border-white pb-1">Navigation</h3>
             <ul className="space-y-2">
               {['Home', 'About', 'Services', 'Blogs', 'Contact'].map((item) => (
                 <li key={item}>
@@ -104,7 +110,7 @@ export default function Footer() {
 
           {/* Socials */}
           <div>
-            <h3 className="text-sm font-black uppercase mb-4 border-b-2 border-black pb-1">Socials</h3>
+            <h3 className="text-sm font-black uppercase mb-4 border-b-2 border-black dark:border-white pb-1">Socials</h3>
             <ul className="space-y-2">
               {[
                 { name: 'LinkedIn', icon: <Linkedin size={16} strokeWidth={2.5} />, link: 'https://linkedin.com/in/mohit-ostwal-kumawat123', color: 'hover:text-[#5FA8FF]' },
@@ -114,7 +120,7 @@ export default function Footer() {
               ].map((social) => (
                 <li key={social.name}>
                   <a href={social.link} target="_blank" rel="noopener noreferrer" className={`group flex items-center text-base lg:text-lg font-bold uppercase transition-all ${social.color}`}>
-                    <span className="mr-3 p-1 border-2 border-transparent group-hover:border-black group-hover:bg-white transition-all group-hover:-rotate-12 group-hover:scale-110">
+                    <span className="mr-3 p-1 border-2 border-transparent group-hover:border-black dark:group-hover:border-white group-hover:bg-white dark:group-hover:bg-gray-800 transition-all group-hover:-rotate-12 group-hover:scale-110">
                       {social.icon}
                     </span>
                     {social.name}
@@ -124,17 +130,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Direct Contact - Text scaled down to handle long emails nicely */}
+          {/* Direct Contact */}
           <div>
-            <h3 className="text-sm font-black uppercase mb-4 border-b-2 border-black pb-1">Get In Touch</h3>
+            <h3 className="text-sm font-black uppercase mb-4 border-b-2 border-black dark:border-white pb-1">Get In Touch</h3>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:dev.mohitkumawat@gmail.com" className="block text-sm lg:text-base font-bold hover:bg-black hover:text-white px-2 py-1 -ml-2 transition-colors border-2 border-transparent hover:border-black break-words group relative overflow-hidden">
+                <a href="mailto:dev.mohitkumawat@gmail.com" className="block text-sm lg:text-base font-bold hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors border-2 border-transparent hover:border-black dark:hover:border-white break-words group relative overflow-hidden">
                   <span className="relative z-10">dev.mohitkumawat@gmail.com</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:mohitkumawat2209@gmail.com" className="block text-sm lg:text-base font-bold hover:bg-black hover:text-white px-2 py-1 -ml-2 transition-colors border-2 border-transparent hover:border-black break-words">
+                <a href="mailto:mohitkumawat2209@gmail.com" className="block text-sm lg:text-base font-bold hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 -ml-2 transition-colors border-2 border-transparent hover:border-black dark:hover:border-white break-words">
                   mohitkumawat2209@gmail.com
                 </a>
               </li>
@@ -146,8 +152,8 @@ export default function Footer() {
 
       {/* Bottom Interface Area */}
       <div className="relative z-10 max-w-[90rem] w-full mx-auto px-6 pb-6 lg:pb-8">
-        <div className="flex flex-col md:flex-row justify-between items-end border-t-[3px] border-black pt-4">
-          
+        <div className="flex flex-col md:flex-row justify-between items-end border-t-[3px] border-black dark:border-white pt-4">
+
           <div className="group cursor-default">
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-1 group-hover:text-[#5FA8FF] transition-colors duration-500">
               MOHIT OSTWAL
@@ -165,20 +171,20 @@ export default function Footer() {
             </div>
 
             {/* Scroll to Top Button */}
-            <button 
+            <button
               onClick={scrollToTop}
-              className="group w-12 h-12 border-[3px] border-black rounded-full flex items-center justify-center bg-white hover:bg-[#FFD100] transition-all hover:-translate-y-1 duration-300 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]"
+              className="group w-12 h-12 border-[3px] border-black dark:border-white rounded-full flex items-center justify-center bg-white dark:bg-gray-900 hover:bg-[#FFD100] dark:hover:bg-[#FFD100] transition-all hover:-translate-y-1 duration-300 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[5px_5px_0px_0px_rgba(255,255,255,1)]"
               aria-label="Scroll to top"
             >
-              <ArrowUp size={24} strokeWidth={3} className="group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUp size={24} strokeWidth={3} className="group-hover:-translate-y-0.5 transition-transform text-black dark:text-white" />
             </button>
           </div>
 
         </div>
       </div>
 
-      {/* Infinite Marquee Geometric Shape Bottom Border - Increased height to h-20 */}
-      <div className="w-full bg-black h-20 flex items-center overflow-hidden border-t-4 border-black relative">
+      {/* Infinite Marquee Geometric Shape Bottom Border */}
+      <div className="w-full bg-black dark:bg-gray-900 h-20 flex items-center overflow-hidden border-t-4 border-black dark:border-white relative">
         <div className="flex whitespace-nowrap animate-[marquee_20s_linear_infinite] items-center">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center justify-around w-screen shrink-0">
