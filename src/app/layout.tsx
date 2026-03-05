@@ -4,7 +4,7 @@ import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/Navbar";
 import "sheryjs/dist/Shery.css";
-import { ThemeProvider } from "@/component/theme-provider";
+import { ThemeProvider } from "@/component/Theme-provider";
 
 // Poppins is not a variable font, so we must specify the weights we need
 const poppins = Poppins({
