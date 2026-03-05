@@ -24,10 +24,15 @@ const Navbar = () => {
 
   ];
 
-  const pathname = usePathname();
+  // pathname not currently used but can be re-enabled later if needed
+  // const pathname = usePathname();
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // setMounted inside effect; disabling lint since this pattern avoids SSR mismatch
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   const isDark = mounted && theme === "dark";
   const btnColor = isDark ? "#ffffff" : "#000000";

@@ -8,7 +8,11 @@ export function ThemeToggle() {
   const { setTheme, theme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
-  useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    // avoid react-hooks/set-state-in-effect warning; mounting flag used for SSR hydration
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, [])
 
   if (!mounted) {
     return (

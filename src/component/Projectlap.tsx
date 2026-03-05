@@ -1,34 +1,45 @@
 "use client"
 import React from 'react'
 import { useGLTF, useScroll, useTexture, Center } from '@react-three/drei'
+import type { GLTF } from 'three-stdlib';
 import * as THREE from "three";
 import { useFrame } from '@react-three/fiber'
 
-const Projectlap = () => {
-   let model = useGLTF("./mac.glb");
-   let tex = useTexture("./laptopw.avif");
-   let meshes: any = {};
+const Projectlap: React.FC = () => {
+   const model = useGLTF("./mac.glb") as GLTF;
+   const tex = useTexture("./laptopw.avif");
+   const meshesRef = React.useRef<Record<string, THREE.Object3D>>({});
    
-   model.scene.traverse((e: any) => {
-       meshes[e.name] = e;  
-   });
+   React.useEffect(() => {
+     // populate meshes reference once model is loaded
+     model.scene.traverse((e) => {
+       meshesRef.current[e.name] = e;
+     });
 
-   if (meshes.screen) {
-     meshes.screen.rotation.x = THREE.MathUtils.degToRad(180);
-   }
-   
-   if (meshes.matte) {
-     meshes.matte.material.map = tex;
-     meshes.matte.material.emissiveIntensity = 0;
-     meshes.matte.material.metalness = 0;
-     meshes.matte.material.roughness = 1;
-   }
-   
-   let data = useScroll();     
+     // initial orientation
+     const screen = meshesRef.current.screen;
+     if (screen) {
+       screen.rotation.x = THREE.MathUtils.degToRad(180);
+     }
 
-   useFrame((state, delta) => {
-      if (meshes.screen) {
-        meshes.screen.rotation.x = THREE.MathUtils.degToRad(180 - data.offset * 90);
+     const matte = meshesRef.current.matte as THREE.Mesh | undefined;
+     if (matte && 'material' in matte) {
+       // the material types from GLTF can be complex; cast to any for property access
+       // eslint-disable-next-line @typescript-eslint/no-explicit-any
+       const material = matte.material as any;
+       material.map = tex;
+       material.emissiveIntensity = 0;
+       material.metalness = 0;
+       material.roughness = 1;
+     }
+   }, [model, tex]);
+   
+   const data = useScroll();     
+
+   useFrame(() => {
+      const screen = meshesRef.current.screen;
+      if (screen) {
+        screen.rotation.x = THREE.MathUtils.degToRad(180 - data.offset * 90);
       }
    });
 
